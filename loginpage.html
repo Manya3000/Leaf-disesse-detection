@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="papaya.css">
+</head>
+<body>
+    <div class = "bar">
+        <h1>POTATOGUARD</h1>
+    </div>
+    
+    <div class="container">
+        <div class="container">
+            <h1>LOGIN PAGE</h1>
+            <form action="ppproject.html" id="Loginform" >
+              <label for="usrname">Username</label>
+              <input type="text" id="usrname" name="usrname" required>
+          
+              <label for="psw">Password</label>
+            <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+          
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          
+          <div id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>
+          <style>
+            /* Style all input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 15px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  margin-top: 50px;
+}
+
+/* Style the container for inputs */
+.container {
+  display: column;
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-top: 20px;
+  width: 55%;
+  text-align: center;
+  grid-gap:20px;
+}
+.container p
+{
+    margin-top: 20px;
+
+}
+
+.container-text
+{
+    margin-top: 30px;
+}
+
+/* The message box is shown when the user clicks on the password field */
+.message
+ {
+  text-align: center;
+  width: 70%;
+  margin: 0 20px;
+  background: #f1f1f1;
+  color: #000;
+  padding: 50px;
+  margin-top: 50px;
+  flex-direction: column;
+  color: black;
+  cursor: pointer;
+  max-width: 350px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: 50px;;
+  left: -25px;
+  content: "&#10004;";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: white;
+}
+
+.invalid:before {
+  position: relative;
+  
+  content: "&#10006;";
+}
+</style>
+ 
+<script>
+let loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let username = document.getElementById("username");
+  let password = document.getElementById("password");
+
+  if (username.value == "" || password.value == "") {
+    alert("Ensure you input a value in both fields!");
+  } else {
+    // perform operation with form input
+    window.location.href="ppproject.html";
+    console.log(
+      `This form has a username of ${username.value} and password of ${password.value}`
+    );
+
+    username.value = "";
+    password.value = "";
+  }
+});
+
+    </script>
+</body>
+</html>
